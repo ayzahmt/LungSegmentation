@@ -41,7 +41,7 @@ def get_pixels_hu(scans):
 
 
 #
-# Save Görüntüleri dosyaya array olarak kaydeder.
+# Save the images as an array
 #
 def save_images_array(path, images):
     x = datetime.datetime.now()
