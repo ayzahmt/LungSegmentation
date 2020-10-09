@@ -41,21 +41,19 @@ def get_pixels_hu(scans):
 
 
 #
-# Save the images as an array
+# Save images as an array
 #
 def save_images_array(path, images):
     x = datetime.datetime.now()
-    dateformat = str(x.year) + str(x.month) + str(x.day) + str(x.minute)
+    dateformat = str(x.year) + str(x.month) + str(x.day)
 
     np.save(path + "fullimages_%s.npy" % (dateformat), images)
 
 
-#######
-# Initialize parameter and run methods
-#######
-p1_dicom_path = "C:\\Users\\Ayaz\\Desktop\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
-data_path = "C:\\Users\\Ayaz\\Desktop\\tez\\dataset\\"
+#
+# Load images (as an array) from npy file
+#
+def load_images_array(path, yyyymmdd):
+    full_path = path + "fullimages_%d.npy" % yyyymmdd
+    return np.load(full_path).astype(np.float64)
 
-patient = load_images(p1_dicom_path)
-imgs = get_pixels_hu(patient)
-save_images_array(data_path, imgs)
