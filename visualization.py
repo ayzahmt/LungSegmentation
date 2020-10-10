@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 
 
 #
-# show HU values on graphic.
+# Show HU values on graphic.
 #
 def show_hu_values(images):
     plt.hist(images.flatten(), bins=50, color='c')
-    plt.xlabel("Hounsfield Units (HU)")
+    plt.xlabel("Hounsfield Units Values")
     plt.ylabel("Frequency")
     plt.show()
 
