@@ -1,5 +1,6 @@
 import dicomimages
 import visualization
+import segmentation
 
 #######
 # Initialize parameter and run methods
@@ -12,4 +13,5 @@ data_path = "C:\\Users\\Ayaz\\Desktop\\tez\\dataset\\"
 # dicomimages.save_images_array(data_path, imgs)
 
 imgs = dicomimages.load_images_array(data_path, 2020109)
+imgs = segmentation.create_mask(imgs)
 visualization.show_one_slice(imgs[30])
