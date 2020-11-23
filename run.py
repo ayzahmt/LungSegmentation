@@ -5,7 +5,8 @@ import segmentation
 #######
 # Initialize parameter and run methods
 #######
-p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
+p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 " \
+                "bt\\DICOM\\ST000000\\SE000003\\ "
 data_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\tez\\dataset\\"
 
 # patient = dicomimages.load_images(p1_dicom_path)

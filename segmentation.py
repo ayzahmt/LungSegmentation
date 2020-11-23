@@ -6,6 +6,7 @@ import dicomimages
 def create_mask(image):
     # piksel değerlerini 1 ve 2 yapıyoruz
     # backround olarak default 0 değeri set edilir
+    # threshold değeri 300 - 400 arası seçilebilir.
     binary_image = np.array(image > -300, dtype=np.int8) + 1
 
     # label backround değerini default 0 alıyor
@@ -43,6 +44,7 @@ def create_mask(image):
 
 
 def largest_label_volume(im, bg=-1):
+    # label değerlerini ve sayısını döner
     values, counts = np.unique(im, return_counts=True)
 
     counts = counts[values != bg]
