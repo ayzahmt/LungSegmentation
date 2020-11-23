@@ -49,4 +49,3 @@ def save_images_array(path, images):
 def load_images_array(path, yyyymmdd):
     full_path = path + "fullimages_%d.npy" % yyyymmdd
     return np.load(full_path).astype(np.float64)
-
