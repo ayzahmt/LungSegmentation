@@ -2,6 +2,7 @@ import pydicom
 import os
 import numpy as np
 import datetime
+import nibabel
 
 
 #
@@ -12,6 +13,17 @@ def load_images(path):
     slices.sort(key=lambda x: int(x.InstanceNumber))
 
     return slices
+
+
+#
+# Load nifti file from path
+#
+def load_nifti_file(path):
+    images = nibabel.load(path).get_data()
+
+    images_array = np.array(images)
+
+    return images_array
 
 
 #

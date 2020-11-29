@@ -56,10 +56,7 @@ def largest_label_volume(im, bg=-1):
         return None
 
 
-def segment_lung(dicom_path):
-    imgs = dicomimages.load_images(dicom_path)
-    imgs_with_hu = dicomimages.get_pixels_hu(imgs)
-
+def segment_lung(imgs_with_hu):
     masks = create_mask(imgs_with_hu)
 
     imgs_segmented_lung = imgs_with_hu * masks
