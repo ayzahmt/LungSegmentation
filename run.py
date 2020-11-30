@@ -3,14 +3,31 @@ import visualization
 import segmentation
 import dataset
 from patientContract import Patient
+from patientContract import PatientPath
 
 #######
 # Initialize parameter and run methods
 #######
-p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
 data_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\tez\\dataset\\"
+
+p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
 p1_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii"
 
+p2_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii"
+p2_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\11-5-2016 bt\\DICOM\\ST000000\\SE000001"
+
+p3_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii"
+p3_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Jak Valid Sevindiren\\DICOM\\S00001\\SER00002"
+
+p4_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii"
+p4_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\\scans\\scans\\Fatma Demirsoy"
+
+
+paths = [PatientPath(p1_dicom_path, p1_nifti_path),
+         PatientPath(p2_dicom_path, p2_nifti_path),
+         PatientPath(p3_dicom_path, p3_nifti_path),
+         PatientPath(p4_dicom_path, p4_nifti_path)
+         ]
 
 # imgs = dicomimages.get_pixels_hu(patient)
 # dicomimages.save_images_array(data_path, imgs)
@@ -19,14 +36,16 @@ p1_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HR
 # imgs = segmentation.create_mask(imgs)
 
 
-imgs = dicomimages.load_images(p1_dicom_path)
-patient = Patient(imgs[0].PatientID, imgs[0].PatientName.given_name, imgs[0].PatientName.family_name)
+for path in paths:
 
-imgs_with_hu = dicomimages.get_pixels_hu(imgs)
+    images = dicomimages.load_images(path.dicom)
+    patient = Patient(images[0].PatientID, images[0].PatientName.given_name, images[0].PatientName.family_name)
 
-labeled_imgs = dicomimages.load_nifti_file(p1_nifti_path)
-segmented_lungs = segmentation.segment_lung(imgs_with_hu)
-dataset.create_dataset(segmented_lungs, labeled_imgs, patient)
+    images_with_hu = dicomimages.get_pixels_hu(images)
+
+    labeled_images = dicomimages.load_nifti_file(path.nifti)
+    segmented_lungs = segmentation.segment_lung(images_with_hu)
+    dataset.create_dataset(segmented_lungs, labeled_images, patient, test=False)
 
 
 #visualization.show_one_slice(imgs[30])

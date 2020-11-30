@@ -17,7 +17,7 @@ DATASET = []
 #
 # Create dataset
 #
-def create_dataset(segmented_lungs, images_with_label, patient):
+def create_dataset(segmented_lungs, images_with_label, patient, test):
     # 512*512*57 to convert 57*512*512
     images_with_label = np.transpose(images_with_label, (2, 1, 0))
 
@@ -33,7 +33,7 @@ def create_dataset(segmented_lungs, images_with_label, patient):
         # doktor tarafından etiketlenmiş değerleri içeriyorsa
         if 1 in labeled_image or 2 in labeled_image or 3 in labeled_image:
             for m in range(0, x, 3):
-                for n in range(0, y, 3):
+                for n in range(0, y, 4):
                     if labeled_image[m][n] != 0:
                         path, label = crop_image(image, labeled_image, m, n)
                         if label != 0:
