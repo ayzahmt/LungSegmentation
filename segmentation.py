@@ -1,6 +1,7 @@
 import numpy as np
 from skimage import measure
 import dicomimages
+from scipy.ndimage import morphology
 
 
 def create_mask(image):
@@ -62,5 +63,24 @@ def segment_lung(imgs_with_hu):
     imgs_segmented_lung = imgs_with_hu * masks
 
     return imgs_segmented_lung
+
+
+def dice_metric_coeffecient(image1, image2):
+    image_one = np.array(image1).astype(np.bool)
+    image_two = np.array(image2).astype(np.bool)
+
+    if image_one.shape != image_two.shape:
+        raise ValueError("Shape mismatch: im1 and im2 must have the same shape.")
+
+    image_sum = image_one.sum() + image_two.sum()
+    if image_sum == 0:
+        return 1.0
+
+    # Compute Dice coefficient
+    intersection = np.logical_and(image_one, image_two)
+
+    intersection_sum = intersection.sum()
+
+    return 2 * intersection_sum / image_sum
 
 
