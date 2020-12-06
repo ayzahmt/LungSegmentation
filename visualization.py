@@ -64,8 +64,10 @@ def plot_nifti(images):
     for i, s in enumerate(images):
         img3d[:, :, i] = s
 
+    image_index = img_shape[2] // 2
+
     a1 = plt.subplot(1, 1, 1)
-    plt.imshow(img3d[:, :, img_shape[2] // 2])
+    plt.imshow(img3d[:, :, image_index])
     a1.set_aspect(1)
 
     plt.show()
@@ -86,8 +88,10 @@ def plot_dicom_and_nifti(dicom_images, nifti_images, segmented_lungs):
         img2d = s.pixel_array
         img3d_dicom[:, :, i] = img2d
 
+    image_index = img_shape_dicom[2] // 2
+
     a1 = plt.subplot(2, 2, 1)
-    plt.imshow(img3d_dicom[:, :, img_shape_dicom[2] // 2])
+    plt.imshow(img3d_dicom[:, :, image_index])
     a1.set_aspect(1)
 
     img_shape_nifti = list(nifti_images[0].shape)
@@ -98,11 +102,11 @@ def plot_dicom_and_nifti(dicom_images, nifti_images, segmented_lungs):
         img3d_nifti[:, :, i] = s
 
     a2 = plt.subplot(2, 2, 2)
-    plt.imshow(img3d_nifti[:, :, img_shape_nifti[2] // 2])
+    plt.imshow(img3d_nifti[:, :, image_index])
     a2.set_aspect(1)
 
     a3 = plt.subplot(2, 2, 3)
-    plt.imshow(segmented_lungs[img_shape_dicom[2] // 2], cmap='gray')
+    plt.imshow(segmented_lungs[image_index], cmap='gray')
     a3.set_aspect(1)
 
     plt.show()
