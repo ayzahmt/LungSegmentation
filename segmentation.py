@@ -31,8 +31,11 @@ def create_mask(image):
             binary_image[i][labeling != l_max] = 1  # akciğer etiketli olmayanları 1 yap
 
     # pikselleri 1 ve 2 yapmıştık (+1 eklemiştik). Şimdi eski haline çeviriyoruz.
-    binary_image -= 1
+    binary_image = binary_image - 1
     binary_image = 1 - binary_image  # 1 değeri akcigeri gösteriyor.
+
+    # 2.hasta için 477. pikselden sonraki değerleri temizle ()
+    binary_image[:, 478:, :] = 0
 
     # Remove other air pockets insided body
     labels = measure.label(binary_image, background=0)
@@ -70,7 +73,7 @@ def dice_metric_coeffecient(image1, image2):
     image_two = np.array(image2).astype(np.bool)
 
     if image_one.shape != image_two.shape:
-        raise ValueError("Shape mismatch: im1 and im2 must have the same shape.")
+        raise ValueError("Görüntülerin boyutları eşit değil.")
 
     image_sum = image_one.sum() + image_two.sum()
     if image_sum == 0:
@@ -82,5 +85,6 @@ def dice_metric_coeffecient(image1, image2):
     intersection_sum = intersection.sum()
 
     return 2 * intersection_sum / image_sum
+
 
 
