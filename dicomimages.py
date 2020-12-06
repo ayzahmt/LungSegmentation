@@ -21,6 +21,9 @@ def load_images(path):
 def load_nifti_file(path):
     images = nibabel.load(path).get_data()
 
+    # 512*512*57 to convert 57*512*512
+    images = np.transpose(images, (2, 1, 0))
+
     images_array = np.array(images)
 
     return images_array

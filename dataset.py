@@ -18,8 +18,6 @@ DATASET = []
 # Create dataset
 #
 def create_dataset(segmented_lungs, images_with_label, patient, test):
-    # 512*512*57 to convert 57*512*512
-    images_with_label = np.transpose(images_with_label, (2, 1, 0))
 
     for i in range(len(segmented_lungs)):
 
