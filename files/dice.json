@@ -1,0 +1,337 @@
+[
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 26,
+        "dice_rate": 0.78
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 27,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 28,
+        "dice_rate": 0.93
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 29,
+        "dice_rate": 0.86
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 30,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 25,
+        "dice_rate": 0.78
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 26,
+        "dice_rate": 0.86
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 27,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 28,
+        "dice_rate": 0.81
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 29,
+        "dice_rate": 0.74
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 27,
+        "dice_rate": 0.79
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 28,
+        "dice_rate": 0.89
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 29,
+        "dice_rate": 0.91
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 30,
+        "dice_rate": 0.89
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 31,
+        "dice_rate": 0.82
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 134,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 135,
+        "dice_rate": 0.84
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 136,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 137,
+        "dice_rate": 0.84
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 138,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 139,
+        "dice_rate": 0.86
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 140,
+        "dice_rate": 0.87
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 141,
+        "dice_rate": 0.89
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 142,
+        "dice_rate": 0.91
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 143,
+        "dice_rate": 0.91
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 144,
+        "dice_rate": 0.91
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 145,
+        "dice_rate": 0.94
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 146,
+        "dice_rate": 0.94
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 147,
+        "dice_rate": 0.94
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 148,
+        "dice_rate": 0.95
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 149,
+        "dice_rate": 0.9
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 150,
+        "dice_rate": 0.88
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 151,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 152,
+        "dice_rate": 0.87
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 153,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 154,
+        "dice_rate": 0.84
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 155,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 156,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 157,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 158,
+        "dice_rate": 0.79
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 159,
+        "dice_rate": 0.79
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 160,
+        "dice_rate": 0.78
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 161,
+        "dice_rate": 0.77
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 162,
+        "dice_rate": 0.79
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 103,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 104,
+        "dice_rate": 0.84
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 105,
+        "dice_rate": 0.86
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 106,
+        "dice_rate": 0.87
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 107,
+        "dice_rate": 0.88
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 108,
+        "dice_rate": 0.89
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 109,
+        "dice_rate": 0.9
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 110,
+        "dice_rate": 0.92
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 111,
+        "dice_rate": 0.93
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 112,
+        "dice_rate": 0.95
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 113,
+        "dice_rate": 0.96
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 114,
+        "dice_rate": 0.96
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 115,
+        "dice_rate": 0.95
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 116,
+        "dice_rate": 0.94
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 117,
+        "dice_rate": 0.92
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 118,
+        "dice_rate": 0.92
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 119,
+        "dice_rate": 0.9
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 120,
+        "dice_rate": 0.89
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 121,
+        "dice_rate": 0.86
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 122,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 123,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 124,
+        "dice_rate": 0.83
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 125,
+        "dice_rate": 0.82
+    }
+]
