@@ -1,0 +1,27 @@
+[
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii",
+        "slice": 28,
+        "dice_rate": 0.93
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT.nii",
+        "slice": 27,
+        "dice_rate": 0.85
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\jakvalid.nii",
+        "slice": 29,
+        "dice_rate": 0.91
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii",
+        "slice": 148,
+        "dice_rate": 0.95
+    },
+    {
+        "patient_nifti": "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii",
+        "slice": 114,
+        "dice_rate": 0.96
+    }
+]
