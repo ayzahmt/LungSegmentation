@@ -5,11 +5,16 @@ import dataset
 from patientContract import Patient
 from patientContract import PatientPath
 import numpy as np
+import os
+import json
 
 #######
 # Initialize parameter and run methods
 #######
 data_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\tez\\dataset\\"
+files_path = os.path.join(os.getcwd(), 'files')
+dice_result_path = os.path.join(files_path, 'dice.json')
+
 
 p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
 p1_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\HRCT 2.nii"
@@ -23,11 +28,20 @@ p3_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Jak
 p4_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\3a.nii"
 p4_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\\scans\\scans\\Fatma Demirsoy"
 
+p5_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\7b.nii"
+p5_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\\scans\\scans\\Sabih Tansal\\KASIM 2016 BT\\DICOM\\ST000000\\SE000001"
 
-paths = [PatientPath(p2_dicom_path, p2_nifti_path)
-         #,PatientPath(p2_dicom_path, p2_nifti_path)
-         #,PatientPath(p3_dicom_path, p3_nifti_path)
-         #,PatientPath(p4_dicom_path, p4_nifti_path)
+''' 
+Doktor tarafında neredeyse çok az bi kısım işaretlenmiş, 
+p5_nifti_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\isaretlemeler\\5c.nii"
+p5_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\\scans\\scans\\"
+'''
+
+paths = [PatientPath(p1_dicom_path, p1_nifti_path)
+         ,PatientPath(p2_dicom_path, p2_nifti_path)
+         ,PatientPath(p3_dicom_path, p3_nifti_path)
+         ,PatientPath(p4_dicom_path, p4_nifti_path)
+         ,PatientPath(p5_dicom_path, p5_nifti_path)
          ]
 
 # imgs = dicomimages.get_pixels_hu(patient)
@@ -37,7 +51,8 @@ paths = [PatientPath(p2_dicom_path, p2_nifti_path)
 # imgs = segmentation.create_mask(imgs)
 
 dices = []
-def dice_metric(segmented_images, labeled_images):
+dice_results = []
+def dice_metric(segmented_images, labeled_images, path):
 
     middle_slice_index = int(len(segmented_images) // 2)
     begin = middle_slice_index_per_5_begin = middle_slice_index - int(middle_slice_index * 10 / 100)
@@ -51,8 +66,17 @@ def dice_metric(segmented_images, labeled_images):
         print(str(i) + ".slice - " + str(dice))
         slice_count = slice_count + 1
 
+        dice_results.append({
+            'patient_nifti': path.nifti,
+            'slice': i,
+            'dice_rate': round(dice, 2)
+        })
+
     print(str(slice_count) + " tane slice için Dice metrix ortalama:", sum(dices) / len(dices))
     print()
+
+    with open(dice_result_path, 'w') as file:
+        file.write(json.dumps(dice_results, indent=4))
 
 
 for path in paths:
@@ -76,7 +100,7 @@ for path in paths:
 
     #visualization.plot_nifti(labeled_images)
 
-    dice_metric(segmented_lungs, labeled_images)
+    dice_metric(segmented_lungs, labeled_images, path)
 
     #print("Dice metrix average for patient:", sum(dice) / len(dice))
 
