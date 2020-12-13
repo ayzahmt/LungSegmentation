@@ -63,7 +63,15 @@ def largest_label_volume(im, bg=-1):
 def segment_lung(imgs_with_hu):
     masks = create_mask(imgs_with_hu)
 
-    imgs_segmented_lung = imgs_with_hu * masks
+    h_masks = morphology.binary_fill_holes(masks > 0)
+
+    # dilation = extract pixels, smoothes the boundaires
+    d1_masks = morphology.binary_dilation(h_masks, iterations=1)
+
+    # fill_holes = fill in holes
+    h1_masks = morphology.binary_fill_holes(d1_masks)
+
+    imgs_segmented_lung = imgs_with_hu * h1_masks
 
     return imgs_segmented_lung
 
