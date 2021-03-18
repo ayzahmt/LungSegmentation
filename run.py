@@ -13,7 +13,7 @@ import json
 #######
 data_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\tez\\dataset\\"
 files_path = os.path.join(os.getcwd(), 'files')
-dice_result_path = os.path.join(files_path, 'dice.json')
+dice_result_path = os.path.join(files_path, 'dice_max_with_morphology.json')
 
 
 p1_dicom_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\msc\\scans\\scans\\Adem Acar\\12-12-2016 bt\\DICOM\\ST000000\\SE000003\\"
@@ -59,7 +59,18 @@ def dice_metric(segmented_images, labeled_images, path):
     end = middle_slice_index_per_5_end = middle_slice_index + int(middle_slice_index * 10 / 100)
 
     slice_count = 0
+    i = middle_slice_index
+    dice = segmentation.dice_metric_coeffecient(segmented_images[i], labeled_images[i])
+    dice_results.append({
+        'patient_nifti': path.nifti,
+        'slice': i,
+        'dice_rate': round(dice, 2)
+    })
 
+    with open(dice_result_path, 'w') as file:
+        file.write(json.dumps(dice_results, indent=4))
+
+'''
     for i in range(begin, end+1):
         dice = segmentation.dice_metric_coeffecient(segmented_images[i], labeled_images[i])
         dices.append(dice)
@@ -71,12 +82,13 @@ def dice_metric(segmented_images, labeled_images, path):
             'slice': i,
             'dice_rate': round(dice, 2)
         })
+        
 
     print(str(slice_count) + " tane slice için Dice metrix ortalama:", sum(dices) / len(dices))
     print()
+    '''
 
-    with open(dice_result_path, 'w') as file:
-        file.write(json.dumps(dice_results, indent=4))
+
 
 
 for path in paths:
