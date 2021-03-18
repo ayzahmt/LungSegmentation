@@ -1,5 +1,6 @@
 import numpy as np
 import json
+from random import shuffle
 
 window_size = 25
 core_size = 5
@@ -11,6 +12,9 @@ CROPPED_IMAGE_INDEX = 0
 dataset_cropped_images_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\images\\"
 dataset_cropped_images_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\dataset.json"
 
+train_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\train_dataset.json"
+test_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\test_dataset.json"
+
 DATASET = []
 
 
@@ -18,7 +22,6 @@ DATASET = []
 # Create dataset
 #
 def create_dataset(segmented_lungs, images_with_label, patient, test):
-
     for i in range(len(segmented_lungs)):
 
         labeled_image = images_with_label[i]
@@ -36,9 +39,9 @@ def create_dataset(segmented_lungs, images_with_label, patient, test):
                         path, label = crop_image(image, labeled_image, m, n)
                         if label != 0:
                             DATASET.append({
-                                #'patient_id': patient.id,
-                                #'patient_name': patient.name,
-                                #'patient_surname': patient.surname,
+                                # 'patient_id': patient.id,
+                                # 'patient_name': patient.name,
+                                # 'patient_surname': patient.surname,
                                 'image_path': path,
                                 'label': str(label)
                             })
@@ -105,3 +108,30 @@ def get_most_used_label(labeled_image, middle_index):
     label = values[ind]
 
     return label
+
+
+#
+# Create train and test dataset
+#
+def create_train_and_test_dataset():
+    # crop edilmiş görüntülerin bilgileri alınır
+    with open(dataset_cropped_images_info_path, "r") as file:
+        info_datas = json.load(file)
+        # bilgiler karıştırılır
+        shuffle(info_datas)
+
+        train_rate = round(0.80 * len(info_datas))
+
+        train_dataset = info_datas[:train_rate]
+        train_file = open(train_dataset_info_path, "w")
+        train_file.write(json.dumps(train_dataset, indent=4, sort_keys=True))
+        train_file.close()
+
+        test_dataset = info_datas[train_rate:]
+        test_file = open(test_dataset_info_path, "w")
+        test_file.write(json.dumps(test_dataset, indent=4, sort_keys=True))
+        test_file.close()
+
+
+if __name__ == '__main__':
+    create_train_and_test_dataset()
