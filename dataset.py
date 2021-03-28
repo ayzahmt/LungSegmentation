@@ -1,6 +1,7 @@
 import numpy as np
 import json
 from random import shuffle
+from tqdm import tqdm
 
 window_size = 25
 core_size = 5
@@ -9,11 +10,17 @@ LABEL_THRESHOLD = 0.85
 
 CROPPED_IMAGE_INDEX = 0
 
-dataset_cropped_images_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\images\\"
-dataset_cropped_images_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\dataset.json"
+dataset_cropped_images_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\images3\\"
+dataset_cropped_images_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\dataset3.json"
+images_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\images3.npy"
+labels_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\labels3.npy"
 
-train_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\train_dataset.json"
-test_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\test_dataset.json"
+train_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\train_dataset3.json"
+test_dataset_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\test_dataset3.json"
+
+test_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\test175.json"
+test_image_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\testimages175.npy"
+test_label_info_path = "C:\\Users\\Ahmet\\Desktop\\tez_verileri\\dataset\\testlabels175.npy"
 
 DATASET = []
 
@@ -21,7 +28,7 @@ DATASET = []
 #
 # Create dataset
 #
-def create_dataset(segmented_lungs, images_with_label, patient, test):
+def create_dataset(segmented_lungs, images_with_label, test):
     for i in range(len(segmented_lungs)):
 
         labeled_image = images_with_label[i]
@@ -133,5 +140,59 @@ def create_train_and_test_dataset():
         test_file.close()
 
 
+def create_images_and_labels():
+    data = json.load(open(dataset_cropped_images_info_path, "r"))
+    images = []
+    labels = []
+    for row in tqdm(data):
+        img = np.loadtxt(row['image_path'])
+        images.append(img.reshape(25, 25, 1))
+
+        if row['label'] == '1':
+            labels.append([1, 0, 0])
+        elif row['label'] == '2':
+            labels.append([0, 1, 0])
+        elif row['label'] == '3':
+            labels.append([0, 0, 1])
+
+    np.save(images_info_path, images)
+    np.save(labels_info_path, labels)
+
+
+def get_data():
+    images = np.load(images_info_path).astype(np.float64)
+    labels = np.load(labels_info_path).astype(np.float64)
+
+    return images, labels
+
+
+def get_test_mini_data():
+    images = np.load(test_image_info_path).astype(np.float64)
+    labels = np.load(test_label_info_path).astype(np.float64)
+
+    return images, labels
+
+
+def create_test_mini_images_and_labels():
+    data = json.load(open(test_info_path, "r"))
+    images = []
+    labels = []
+    for row in tqdm(data):
+        img = np.loadtxt(row['image_path'])
+        images.append(img.reshape(25, 25, 1))
+
+        if row['label'] == '1':
+            labels.append([1, 0, 0])
+        elif row['label'] == '2':
+            labels.append([0, 1, 0])
+        elif row['label'] == '3':
+            labels.append([0, 0, 1])
+
+    np.save(test_image_info_path, images)
+    np.save(test_label_info_path, labels)
+    #return np.array(images), np.array(labels)
+
+
 if __name__ == '__main__':
-    create_train_and_test_dataset()
+    create_test_mini_images_and_labels();
+
